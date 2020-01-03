@@ -18,3 +18,20 @@ docker exec deepmacs emacs
 ```
 
 If you created container by GUI version, command below launches GUI Emacs.
+
+### Using hy-mode and auto completion in Emacs
+
+Once after launcing emacs
+
+```elisp
+M-x hy-mode
+M-x run-jedhy
+```
+
+When you add new import statements in hy buffer
+
+```elisp
+M-x hy-jedhy-update-imports
+```
+
+Current hy-mode requires manual update for imports. See https://github.com/hylang/hy-mode/blob/master/README.org
