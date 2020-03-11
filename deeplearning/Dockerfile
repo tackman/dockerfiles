@@ -6,7 +6,7 @@ RUN useradd -ms /bin/bash tackman
 RUN  add-apt-repository ppa:kelleyk/emacs && apt update && apt install -y emacs26 neovim git
 
 RUN pip install matplotlib scikit-image scikit-learn scipy numpy torch torchvision hy Pillow requests tqdm scikit-image \
-  pytorch-lightning && \
+  pytorch-lightning autopep8 && \
   pip install git+https://github.com/ekaschalk/jedhy.git
 
 USER tackman
