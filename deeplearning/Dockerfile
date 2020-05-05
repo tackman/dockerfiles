@@ -7,7 +7,8 @@ RUN  add-apt-repository ppa:kelleyk/emacs && apt update && apt install -y emacs2
 
 RUN pip install matplotlib scikit-image scikit-learn scipy numpy torch torchvision hy Pillow requests tqdm scikit-image \
   pytorch-lightning autopep8 && \
-  pip install git+https://github.com/ekaschalk/jedhy.git
+  pip install git+https://github.com/ekaschalk/jedhy.git && \
+  pip install opencv-python lmdb
 
 USER tackman
 WORKDIR /home/tackman
