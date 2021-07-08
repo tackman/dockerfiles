@@ -1,0 +1,16 @@
+version: '3.9'
+services:
+  code:
+    build:
+      context: .
+    ports:
+      - 127.0.0.1:8081:8080
+    volumes:
+      - ./:/home/tackman/app
+    entrypoint: "code-server --auth none --bind-addr=0.0.0.0:8080 /home/tackman/app"
+    privileged: true
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]
