@@ -1,0 +1,33 @@
+version: '3.9'
+services:
+  code:
+    build:
+      context: .
+    ports:
+      - 8081:8080
+    volumes:
+      - ./:/home/tackman/app
+    entrypoint: "code-server --auth none --bind-addr=0.0.0.0:8080 /home/tackman/app"
+    privileged: true
+    networks:
+      - main
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - capabilities: [gpu]
+  visdom:
+    build:
+      dockerfile: Dockerfile-visdom
+      context: .
+    ports:
+      - 8097:8097
+    networks:
+      - main
+    entrypoint: "visdom"
+
+networks:
+  main:
+    driver: bridge
+
+# https://gist.github.com/kolotaev/e9c22f8d5d6ce79b2eff43406c2838e3

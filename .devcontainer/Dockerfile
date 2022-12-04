@@ -7,6 +7,3 @@ RUN pip install poetry
 RUN useradd -ms /bin/bash tackman
 USER tackman
 WORKDIR /home/tackman
-RUN code-server \
-  --install-extension ms-python.python \
-  --install-extension ms-ceintl.vscode-language-pack-ja
