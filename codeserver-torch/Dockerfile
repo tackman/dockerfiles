@@ -1,8 +1,8 @@
-FROM pytorch/pytorch:1.9.0-cuda11.1-cudnn8-devel
+FROM nvidia/cuda:11.6.2-runtime-ubuntu20.04
 
-RUN apt-get update && apt-get install -y curl
+FROM python:3.10.8-buster
 RUN curl -fsSL https://code-server.dev/install.sh | sh
-
+RUN pip install poetry
 
 RUN useradd -ms /bin/bash tackman
 USER tackman
