@@ -1,4 +1,5 @@
 {
   "dockerFile": "Dockerfile",
-  "remoteUser": "tackman"
+  "remoteUser": "tackman",
+  "runArgs": ["--gpus", "all"]
 }
